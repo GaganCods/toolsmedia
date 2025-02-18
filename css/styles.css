@@ -1,0 +1,11 @@
+:root {
+    /* Dark Theme Colors */
+    --bg-primary: #0A1929;
+    --bg-secondary: #0F2744;
+    --bg-card: #1A3B61;
+    --text-primary: #FFFFFF;
+    --text-secondary: #B8C7D9;
+    --accent-primary: #2196F3;
+    --accent-secondary: #90CAF9;
+    /* ...existing variables... */
+}

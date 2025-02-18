@@ -1,0 +1,175 @@
+/* Toast Container */
+.toast-container {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	z-index: 9999;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	max-width: 350px;
+}
+
+/* Message Styles */
+.message {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	padding: 16px;
+	border-radius: 12px;
+	background: rgba(30, 30, 30, 0.95);
+	backdrop-filter: blur(10px);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	color: #fff;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+	animation: slideIn 0.3s ease forwards;
+	transform-origin: right;
+}
+
+/* Message Types */
+.message.success {
+	border-left: 4px solid #2ecc71;
+}
+
+.message.error {
+	border-left: 4px solid #e74c3c;
+}
+
+.message.info {
+	border-left: 4px solid #3498db;
+}
+
+.message.warning {
+	border-left: 4px solid #f1c40f;
+}
+
+/* Message Icons */
+.message-icon {
+	width: 24px;
+	height: 24px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	flex-shrink: 0;
+}
+
+.success .message-icon {
+	color: #2ecc71;
+}
+
+.error .message-icon {
+	color: #e74c3c;
+}
+
+.info .message-icon {
+	color: #3498db;
+}
+
+.warning .message-icon {
+	color: #f1c40f;
+}
+
+/* Message Content */
+.message-content {
+	flex: 1;
+}
+
+.message-title {
+	font-weight: 600;
+	margin-bottom: 4px;
+}
+
+.message-text {
+	font-size: 14px;
+	color: rgba(255, 255, 255, 0.8);
+}
+
+/* Close Button */
+.message-close {
+	color: rgba(255, 255, 255, 0.5);
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 4px;
+	transition: color 0.2s ease;
+}
+
+.message-close:hover {
+	color: rgba(255, 255, 255, 0.8);
+}
+
+/* Animations */
+@keyframes slideIn {
+	from {
+		opacity: 0;
+		transform: translateX(100%);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes slideOut {
+	from {
+		opacity: 1;
+		transform: translateX(0);
+	}
+	to {
+		opacity: 0;
+		transform: translateX(100%);
+	}
+}
+
+.message.removing {
+	animation: slideOut 0.3s ease forwards;
+}
+
+/* Progress Bar */
+.message-progress {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 3px;
+	background: rgba(255, 255, 255, 0.2);
+	border-radius: 0 0 4px 4px;
+	animation: progress 3s linear forwards;
+}
+
+.success .message-progress {
+	background: #2ecc71;
+}
+
+.error .message-progress {
+	background: #e74c3c;
+}
+
+.info .message-progress {
+	background: #3498db;
+}
+
+.warning .message-progress {
+	background: #f1c40f;
+}
+
+@keyframes progress {
+	from { width: 100%; }
+	to { width: 0%; }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 480px) {
+	.toast-container {
+		bottom: 0;
+		right: 0;
+		left: 0;
+		padding: 10px;
+		max-width: 100%;
+	}
+
+	.message {
+		border-radius: 12px;
+		margin: 0;
+	}
+}

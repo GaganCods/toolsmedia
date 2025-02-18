@@ -1,0 +1,246 @@
+/* Dark mode colors */
+:root {
+  --dark-bg: #1a1a1a;
+  --dark-surface: #2d2d2d;
+  --dark-surface-hover: #3d3d3d;
+  --dark-text: #ffffff;
+  --dark-text-secondary: #b0b0b0;
+  --dark-border: #404040;
+  --dark-primary: #4a90e2;
+  --dark-primary-hover: #357abd;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+/* Navigation */
+.dark-mode .navbar {
+  background-color: var(--dark-surface);
+  border-bottom: 1px solid var(--dark-border);
+}
+
+.dark-mode .nav-links a {
+  color: var(--dark-text);
+}
+
+.dark-mode .profile-dropdown {
+  background-color: var(--dark-surface);
+  border: 1px solid var(--dark-border);
+}
+
+.dark-mode .profile-dropdown a {
+  color: var(--dark-text);
+}
+
+.dark-mode .profile-dropdown a:hover {
+  background-color: var(--dark-surface-hover);
+}
+
+/* Profile Page */
+.dark-mode .profile-container {
+  background-color: var(--dark-bg);
+}
+
+.dark-mode .profile-header {
+  background-color: var(--dark-surface);
+}
+
+.dark-mode .profile-nav-item {
+  background-color: var(--dark-surface);
+  color: var(--dark-text);
+  border: 1px solid var(--dark-border);
+}
+
+.dark-mode .profile-nav-item:hover,
+.dark-mode .profile-nav-item.active {
+  background-color: var(--dark-surface-hover);
+}
+
+.dark-mode .info-card {
+  background-color: var(--dark-surface);
+  border: 1px solid var(--dark-border);
+}
+
+.dark-mode .info-label {
+  color: var(--dark-text-secondary);
+}
+
+.dark-mode .activity-card {
+  background-color: var(--dark-surface);
+  border: 1px solid var(--dark-border);
+}
+
+/* Settings Page */
+.dark-mode .settings-container {
+  background-color: var(--dark-bg);
+}
+
+.dark-mode .settings-sidebar {
+  background-color: var(--dark-surface);
+  border-right: 1px solid var(--dark-border);
+}
+
+.dark-mode .settings-nav-item {
+  color: var(--dark-text);
+}
+
+.dark-mode .settings-nav-item:hover,
+.dark-mode .settings-nav-item.active {
+  background-color: var(--dark-surface-hover);
+}
+
+.dark-mode .settings-card {
+  background-color: var(--dark-surface);
+  border: 1px solid var(--dark-border);
+}
+
+.dark-mode input[type="text"],
+.dark-mode input[type="email"],
+.dark-mode input[type="password"] {
+  background-color: var(--dark-bg);
+  border: 1px solid var(--dark-border);
+  color: var(--dark-text);
+}
+
+.dark-mode .save-btn {
+  background-color: var(--dark-primary);
+}
+
+.dark-mode .save-btn:hover {
+  background-color: var(--dark-primary-hover);
+}
+
+.dark-mode .cancel-btn {
+  background-color: var(--dark-surface);
+  border: 1px solid var(--dark-border);
+}
+
+.dark-mode .cancel-btn:hover {
+  background-color: var(--dark-surface-hover);
+}
+
+/* Mobile styles for settings page */
+@media (max-width: 768px) {
+  .dark-mode .settings-container {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .dark-mode .settings-sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--dark-border);
+    margin-bottom: 1rem;
+  }
+
+  .dark-mode .settings-nav {
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+  }
+
+  .dark-mode .settings-nav-item {
+    flex: 0 0 auto;
+    padding: 0.75rem 1.5rem;
+    margin-right: 0.5rem;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  .dark-mode .settings-content {
+    padding: 1rem 0;
+  }
+
+  .dark-mode .settings-card {
+    padding: 1rem;
+  }
+
+  .dark-mode .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .dark-mode .form-actions {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .dark-mode .form-actions button {
+    width: 100%;
+  }
+
+  /* Mobile menu styles */
+  .dark-mode .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+
+  .dark-mode .menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: var(--dark-text);
+  }
+
+  .dark-mode .nav-links {
+    position: fixed;
+    top: 60px;
+    right: -100%;
+    width: 80%;
+    height: calc(100vh - 60px);
+    background-color: var(--dark-surface);
+    transition: right 0.3s ease;
+    padding: 1rem;
+  }
+
+  .dark-mode .nav-links.active {
+    right: 0;
+  }
+
+  .dark-mode .mobile-backdrop {
+    display: none;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 60px);
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 98;
+  }
+
+  .dark-mode .mobile-backdrop.active {
+    display: block;
+  }
+}
+
+/* Additional mobile-specific styles */
+@media (max-width: 480px) {
+  .dark-mode .settings-card {
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .dark-mode input[type="text"],
+  .dark-mode input[type="email"],
+  .dark-mode input[type="password"] {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+
+  .dark-mode .password-input {
+    position: relative;
+  }
+
+  .dark-mode .toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--dark-text-secondary);
+  }
+} 

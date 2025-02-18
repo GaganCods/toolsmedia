@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Tools - Tools Media</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/tools.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="mobile-backdrop"></div>
+    <header class="tools-header-section">
+        <nav class="navbar sticky">
+            <!-- Same navbar as index.html -->
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <h1>Tools Media</h1>
+                </a>
+            </div>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="#" class="active">Tools</a>
+                <a href="#categories">Categories</a>
+                <a href="auth.html" class="auth-link show">Sign In</a>
+                <div class="profile-section">
+                    <div class="profile-icon"></div>
+                    <span class="profile-name"></span>
+                    <div class="profile-dropdown">
+                        <a href="profile.html">
+                            <i class="fas fa-user-circle"></i>
+                            <span>My Profile</span>
+                        </a>
+                        <a href="settings.html">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                        <a href="#" class="logout">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Sign Out</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </nav>
+        
+        <div class="tools-hero">
+            <h1>Free Tools to Make Your Work Easier</h1>
+            <p>Discover powerful online tools for your daily tasks</p>
+            <div class="tools-search">
+                <div class="search-wrapper">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchTools" placeholder="Search tools...">
+                </div>
+                <div class="category-cards">
+                    <div class="category-card" data-category="pdf">
+                        <i class="fas fa-file-pdf"></i>
+                        <h3>PDF Tools</h3>
+                        <p>Convert, compress, and edit PDFs</p>
+                    </div>
+                    <!-- Add more category cards -->
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="tools-page">
+        <section class="filter-section">
+            <div class="filter-tabs">
+                <button class="filter-tab active" data-category="all">All Tools</button>
+                
+                <button class="filter-tab" data-category="pdf">PDF Tools</button>
+                <button class="filter-tab" data-category="video">Video Tools</button>
+                <button class="filter-tab" data-category="image">Image Tools</button>
+                <button class="filter-tab" data-category="ai">AI Tools</button>
+                <button class="filter-tab" data-category="favorites">
+                    <span>Favorites</span>
+                </button>
+            </div>
+        </section>
+
+        <div class="tools-container">
+            <!-- File Converters Section -->
+            <div class="tools-section" data-category="converter">
+                <h2>File Converters</h2>
+                <div class="tools-grid">
+                    <div class="tool-card" data-category="converter">
+                        <div class="card-header">
+                            <div class="tool-icon">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <button class="favorite-btn">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="tool-info">
+                            <h3>PDF to Word</h3>
+                            <p>Convert PDF files to editable Word documents</p>
+                            <div class="tool-meta">
+                                <span class="tool-rating">
+                                    <i class="fas fa-star"></i> 4.8
+                                </span>
+                                <span class="tool-uses">
+                                    <i class="fas fa-users"></i> 10k+ uses
+                                </span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="tools/converter/pdf-to-word.html" class="use-tool-btn">
+                                <span>Use Tool</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="tool-card" data-category="converter">
+                        <div class="card-header">
+                            <div class="tool-icon">
+                                <i class="fas fa-file-word"></i>
+                            </div>
+                            <button class="favorite-btn">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="tool-info">
+                            <h3>Word to PDF</h3>
+                            <p>Convert Word documents to PDF format</p>
+                            <div class="tool-meta">
+                                <span class="tool-rating">
+                                    <i class="fas fa-star"></i> 4.7
+                                </span>
+                                <span class="tool-uses">
+                                    <i class="fas fa-users"></i> 8k+ uses
+                                </span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="tools/converter/word-to-pdf.html" class="use-tool-btn">
+                                <span>Use Tool</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="tool-card" data-category="converter">
+                        <div class="card-header">
+                            <div class="tool-icon">
+                                <i class="fas fa-file-excel"></i>
+                            </div>
+                            <button class="favorite-btn">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="tool-info">
+                            <h3>Excel to PDF</h3>
+                            <p>Convert Excel spreadsheets to PDF format</p>
+                            <div class="tool-meta">
+                                <span class="tool-rating">
+                                    <i class="fas fa-star"></i> 4.6
+                                </span>
+                                <span class="tool-uses">
+                                    <i class="fas fa-users"></i> 5k+ uses
+                                </span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="tools/converter/excel-to-pdf.html" class="use-tool-btn">
+                                <span>Use Tool</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image Tools Section -->
+            <div class="tools-section" data-category="image">
+                <h2>Image Tools</h2>
+                <div class="tools-grid">
+                    <div class="tool-card" data-category="image">
+                        <div class="card-header">
+                            <div class="tool-icon">
+                                <i class="fas fa-compress"></i>
+                            </div>
+                            <button class="favorite-btn">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="tool-info">
+                            <h3>Image Compressor</h3>
+                            <p>Compress images without quality loss</p>
+                            <div class="tool-meta">
+                                <span class="tool-rating">
+                                    <i class="fas fa-star"></i> 4.9
+                                </span>
+                                <span class="tool-uses">
+                                    <i class="fas fa-users"></i> 15k+ uses
+                                </span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="tools/image/compressor.html" class="use-tool-btn">
+                                <span>Use Tool</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="tool-card" data-category="image">
+                        <div class="card-header">
+                            <div class="tool-icon">
+                                <i class="fas fa-crop"></i>
+                            </div>
+                            <button class="favorite-btn">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="tool-info">
+                            <h3>Image Cropper</h3>
+                            <p>Crop and resize images easily</p>
+                            <div class="tool-meta">
+                                <span class="tool-rating">
+                                    <i class="fas fa-star"></i> 4.8
+                                </span>
+                                <span class="tool-uses">
+                                    <i class="fas fa-users"></i> 12k+ uses
+                                </span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="tools/image/cropper.html" class="use-tool-btn">
+                                <span>Use Tool</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="tool-card" data-category="image">
+                        <div class="card-header">
+                            <div class="tool-icon">
+                                <i class="fas fa-magic"></i>
+                            </div>
+                            <button class="favorite-btn">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="tool-info">
+                            <h3>Image Editor</h3>
+                            <p>Edit images with filters and effects</p>
+                            <div class="tool-meta">
+                                <span class="tool-rating">
+                                    <i class="fas fa-star"></i> 4.7
+                                </span>
+                                <span class="tool-uses">
+                                    <i class="fas fa-users"></i> 9k+ uses
+                                </span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="tools/image/editor.html" class="use-tool-btn">
+                                <span>Use Tool</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Tools Section (New) -->
+            <div class="tools-section" data-category="ai">
+                <h2>AI Tools</h2>
+                <div class="tools-grid">
+                    <div class="tool-card" data-category="ai">
+                        <div class="card-header">
+                            <div class="tool-icon">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <button class="favorite-btn">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="tool-info">
+                            <h3>Text Generator</h3>
+                            <p>Generate creative text with AI</p>
+                            <div class="tool-meta">
+                                <span class="tool-rating">
+                                    <i class="fas fa-star"></i> 4.9
+                                </span>
+                                <span class="tool-uses">
+                                    <i class="fas fa-users"></i> 20k+ uses
+                                </span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="tools/ai/generator.html" class="use-tool-btn">
+                                <span>Use Tool</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="tool-card" data-category="ai">
+                        <div class="card-header">
+                            <div class="tool-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <button class="favorite-btn">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="tool-info">
+                            <h3>Image Generator</h3>
+                            <p>Create images using AI</p>
+                            <div class="tool-meta">
+                                <span class="tool-rating">
+                                    <i class="fas fa-star"></i> 4.8
+                                </span>
+                                <span class="tool-uses">
+                                    <i class="fas fa-users"></i> 15k+ uses
+                                </span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="tools/ai/image-generator.html" class="use-tool-btn">
+                                <span>Use Tool</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text Tools Section (New) -->
+            <div class="tools-section" data-category="text">
+                <h2>Text Tools</h2>
+                <div class="tools-grid">
+                    <div class="tool-card" data-category="text">
+                        <div class="card-header">
+                            <div class="tool-icon">
+                                <i class="fas fa-spell-check"></i>
+                            </div>
+                            <button class="favorite-btn">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="tool-info">
+                            <h3>Grammar Checker</h3>
+                            <p>Check grammar and spelling</p>
+                            <div class="tool-meta">
+                                <span class="tool-rating">
+                                    <i class="fas fa-star"></i> 4.7
+                                </span>
+                                <span class="tool-uses">
+                                    <i class="fas fa-users"></i> 11k+ uses
+                                </span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="tools/text/grammar-checker.html" class="use-tool-btn">
+                                <span>Use Tool</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="tool-card" data-category="text">
+                        <div class="card-header">
+                            <div class="tool-icon">
+                                <i class="fas fa-language"></i>
+                            </div>
+                            <button class="favorite-btn">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="tool-info">
+                            <h3>Text Translator</h3>
+                            <p>Translate text to multiple languages</p>
+                            <div class="tool-meta">
+                                <span class="tool-rating">
+                                    <i class="fas fa-star"></i> 4.6
+                                </span>
+                                <span class="tool-uses">
+                                    <i class="fas fa-users"></i> 13k+ uses
+                                </span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="tools/text/translator.html" class="use-tool-btn">
+                                <span>Use Tool</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="featured-tools">
+            <h2>Free Tools You'd Usually Pay For</h2>
+            <div class="carousel-wrapper">
+                <button class="carousel-arrow prev"><i class="fas fa-chevron-left"></i></button>
+                <div class="carousel-container">
+                    <!-- Carousel items will be added dynamically -->
+                </div>
+                <button class="carousel-arrow next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        <section class="cta-banner">
+            <div class="cta-content">
+                <h2>Support Our Platform</h2>
+                <p>Help us keep these tools free and accessible for everyone</p>
+                <button class="support-btn">Support Us</button>
+            </div>
+            <div class="cta-illustration">
+                <!-- Add illustration here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Same footer as index.html -->
+    </footer>
+
+    <div class="toast-container"></div>
+
+    <!-- Firebase SDK -->
+    <script defer src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth-compat.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore-compat.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/9.6.0/firebase-storage-compat.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/9.6.0/firebase-analytics-compat.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database-compat.js"></script>
+
+    <!-- Initialize Firebase -->
+    <script defer src="js/firebase-config.js"></script>
+    <script defer src="js/main.js"></script>
+    <script defer src="js/tools.js"></script>
+</body>
+</html>
+

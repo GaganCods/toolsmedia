@@ -1,0 +1,214 @@
+:root {
+    /* Dark Theme Colors */
+    --bg-primary: #0A1929;
+    --bg-secondary: #0F2744;
+    --bg-card: #1A3B61;
+    --text-primary: #FFFFFF;
+    --text-secondary: #B8C7D9;
+    --accent-primary: #2196F3;
+    --accent-secondary: #90CAF9;
+    --gradient-dark: linear-gradient(135deg, #0A1929 0%, #1A3B61 100%);
+    --gradient-card: linear-gradient(135deg, #1A3B61 0%, #0F2744 100%);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Common Styles */
+body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+/* Common section styles */
+.categories,
+.faq,
+.blog-highlights,
+.features,
+.tools,
+.trending,
+.testimonials {
+    background: var(--gradient-dark);
+    padding: 5rem 2rem;
+    margin: 0;
+}
+
+/* Headings */
+section h2 {
+    color: var(--text-primary);
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+    border-radius: 2px;
+}
+
+/* Cards */
+.category-card,
+.faq-item,
+.blog-card,
+.feature-card,
+.tool-card,
+.trending-card,
+.testimonial-card {
+    background: var(--gradient-card);
+    border: 1px solid var(--border-color);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px var(--shadow-color);
+    transition: all 0.3s ease;
+}
+
+.category-card:hover,
+.faq-item:hover,
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px var(--shadow-color);
+    border-color: var(--accent-primary);
+}
+
+/* Card Content */
+.category-card h3,
+.faq-item h3,
+.blog-card h3 {
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.category-card p,
+.faq-item p,
+.blog-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Icons */
+.category-card i {
+    color: var(--accent-primary);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Lists */
+.category-card ul li {
+    color: var(--text-secondary);
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.category-card ul li::before {
+    color: var(--accent-primary);
+}
+
+/* Links */
+.category-link,
+.read-more,
+.tool-button {
+    color: var(--accent-primary);
+    border: 2px solid var(--accent-primary);
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    background: transparent;
+}
+
+.category-link:hover,
+.read-more:hover,
+.tool-button:hover {
+    background: var(--accent-primary);
+    color: var(--bg-primary);
+}
+
+/* Grid Layouts */
+.categories-grid,
+.faq-grid,
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Alternating Sections */
+.categories { background: var(--gradient-dark); }
+.faq { background: var(--bg-secondary); }
+.blog-highlights { background: var(--gradient-dark); }
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply animations */
+.category-card,
+.faq-item,
+.blog-card {
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+}
+
+.category-card:nth-child(2) { animation-delay: 0.2s; }
+.category-card:nth-child(3) { animation-delay: 0.4s; }
+.faq-item:nth-child(2) { animation-delay: 0.2s; }
+.faq-item:nth-child(3) { animation-delay: 0.4s; }
+.blog-card:nth-child(2) { animation-delay: 0.2s; }
+.blog-card:nth-child(3) { animation-delay: 0.4s; }
+
+/* Glass Effect */
+.category-card::before,
+.faq-item::before,
+.blog-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 15px;
+    background: linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.05) 0%,
+        rgba(255, 255, 255, 0.02) 100%
+    );
+    z-index: 1;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .categories,
+    .faq,
+    .blog-highlights {
+        padding: 3rem 1rem;
+    }
+
+    .categories h2,
+    .faq h2,
+    .blog-highlights h2 {
+        font-size: 2rem;
+    }
+
+    .category-card,
+    .faq-item,
+    .blog-card {
+        padding: 1.5rem;
+    }
+}

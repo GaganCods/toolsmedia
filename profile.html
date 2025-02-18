@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Tools Media</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+</head>
+<body class="profile-page dark-mode">
+   <!-- Navigation Bar -->
+	<nav class="navbar">
+		<a href="index.html" class="logo-link">
+			<h1>Tools Media</h1>
+		</a>
+		<!-- Add mobile menu toggle -->
+		<div class="menu-toggle">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+		<div class="nav-links">
+			<a href="#home">Home</a>
+			
+			<a href="tools.html">Tools</a>
+			
+            <a href="auth.html" class="auth-link show">Sign In</a>
+			<div class="profile-section">
+				<div class="profile-icon"></div>
+				<span class="profile-name">User Name</span>
+				<div class="profile-dropdown">
+					<a href="profile.html" class="active">
+						<i class="fas fa-user-circle"></i>
+						<span>My Profile</span>
+					</a>
+					<a href="settings.html">
+						<i class="fas fa-cog"></i>
+						<span>Settings</span>
+					</a>
+					<a href="#" class="logout" id="logoutLink">
+						<i class="fas fa-sign-out-alt"></i>
+						<span>Sign Out</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</nav>
+
+<!-- Add mobile backdrop -->
+<div class="mobile-backdrop"></div>
+
+    <main class="profile-container">
+        <!-- Profile Header -->
+        <div class="profile-header">
+            <div class="cover-photo">
+                <img src="assets/banner.svg" alt="Cover Photo" id="coverPhotoImg">
+            </div>
+            <div class="profile-info">
+                <div class="profile-picture">
+                    <div class="profile-picture-placeholder" id="profilePicImg">
+                        <img src="assets/pic.svg" alt="Profile Picture" class="default-profile-pic">
+                    </div>
+                </div>
+
+                <div class="profile-details">
+                    <h1 class="profile-name"><!-- Will be populated by JS --></h1>
+                    <p class="profile-email"><!-- Will be populated by JS --></p>
+                    <p class="profile-joined"><!-- Will be populated by JS --></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile Content -->
+        <div class="profile-content">
+            <!-- Profile Navigation -->
+            <div class="profile-nav">
+                <button class="profile-nav-item active" data-tab="personal">
+                    <i class="fas fa-user-circle"></i>
+                    <span>Personal Info</span>
+                </button>
+                <button class="profile-nav-item" data-tab="activity" data-count="">
+                    <i class="fas fa-history"></i>
+                    <span>Activity</span>
+                </button>
+                <button class="profile-nav-item" data-tab="saved" data-count="">
+                    <i class="fas fa-bookmark"></i>
+                    <span>Saved Tools</span>
+                </button>
+            </div>
+
+            <!-- Profile Sections -->
+            <div class="profile-sections">
+                <!-- Personal Info Section -->
+                <div class="profile-section-content active" id="personal-section">
+                    <h2>Personal Information</h2>
+                    <div class="info-card">
+                        <div class="info-item">
+                            <span class="info-label">Full Name</span>
+                            <span class="info-value" id="fullName">User Name</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Email</span>
+                            <span class="info-value" id="email">user@example.com</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Activity Section -->
+                <div class="profile-section-content" id="activity-section">
+                    <h2>Recent Activity</h2>
+                    <div class="activity-list">
+                        <div class="activity-card">
+                            <i class="fas fa-file-pdf"></i>
+                            <div class="activity-details">
+                                <h3>PDF to Word Conversion</h3>
+                                <p>Converted document.pdf</p>
+                                <span class="activity-time">2 hours ago</span>
+                            </div>
+                        </div>
+                        <!-- Add more activity cards as needed -->
+                    </div>
+                </div>
+
+                <!-- Saved Tools Section -->
+                <div class="profile-section-content" id="saved-section">
+                    <h2>Saved Tools</h2>
+                    <div class="saved-tools-grid">
+                        <!-- Tools will be dynamically added by JavaScript -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container"></div>
+
+    <!-- Firebase SDK -->
+    <script defer src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth-compat.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore-compat.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/9.6.0/firebase-storage-compat.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/9.6.0/firebase-analytics-compat.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database-compat.js"></script>
+
+    <!-- Initialize Firebase -->
+    <script defer src="js/firebase-config.js"></script>
+
+    <!-- App Scripts -->
+    <script defer src="js/main.js"></script>
+    <script defer src="js/profile.js"></script>
+</body>
+</html>

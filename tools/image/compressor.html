@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Image Compressor - Tools Media</title>
+	<link rel="stylesheet" href="../../styles.css">
+	<link rel="stylesheet" href="../../css/tools.css">
+	<link rel="stylesheet" href="css/compressor.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+	<div class="mobile-backdrop"></div>
+	<!-- Same navbar as tools.html -->
+	<nav class="navbar sticky">
+		<div class="logo">
+			<a href="../../index.html" class="logo-link">
+				<h1>Tools Media</h1>
+			</a>
+		</div>
+		<div class="menu-toggle">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+		<div class="nav-links">
+			<a href="../../index.html">Home</a>
+			<a href="../../tools.html" class="active">Tools</a>
+			<a href="../../tools.html#categories">Categories</a>
+			<a href="../../auth.html" class="auth-link show">Sign In</a>
+			<div class="profile-section">
+				<div class="profile-icon"></div>
+				<span class="profile-name"></span>
+				<div class="profile-dropdown">
+					<a href="../../profile.html">
+						<i class="fas fa-user-circle"></i>
+						<span>My Profile</span>
+					</a>
+					<a href="../../settings.html">
+						<i class="fas fa-cog"></i>
+						<span>Settings</span>
+					</a>
+					<a href="#" class="logout">
+						<i class="fas fa-sign-out-alt"></i>
+						<span>Sign Out</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</nav>
+
+	<main class="tool-page">
+		<div class="tool-header">
+			<h1>Image Compressor</h1>
+			<p>Compress your images without losing quality</p>
+		</div>
+
+		<div class="tool-container">
+			<div class="upload-section">
+				<div class="upload-area" id="dropZone">
+					<i class="fas fa-cloud-arrow-up"></i>
+					<h3>Drag & Drop your images here</h3>
+					<p>or</p>
+					<button class="upload-btn">
+						<i class="fas fa-upload"></i>
+						Choose Files
+					</button>
+					<input type="file" id="fileInput" accept="image/*" multiple hidden>
+					<p class="file-info">Supports: JPG, PNG, WebP</p>
+				</div>
+			</div>
+
+			<div class="compression-options">
+				<div class="option-group">
+					<label>Quality Level</label>
+					<div class="range-slider">
+						<input type="range" id="qualitySlider" min="0" max="100" value="80">
+						<span id="qualityValue" title="Current quality level">80%</span>
+					</div>
+					<p class="option-info"></p>
+				</div>
+				<div class="option-group">
+					<label>Output Format</label>
+					<select id="formatSelect">
+						<option value="original">Same as Original</option>
+						<option value="jpeg">JPEG (Best for photos)</option>
+						<option value="png">PNG (Best for graphics)</option>
+						<option value="webp">WebP (Best compression)</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="images-list" id="imagesList">
+				<!-- Images will be added here dynamically -->
+			</div>
+
+			<div class="action-buttons">
+				<button id="compressBtn" class="primary-btn" disabled>
+					<i class="fas fa-compress-arrows-alt"></i>
+					Compress Images
+				</button>
+				<button id="downloadBtn" class="secondary-btn" disabled>
+					<i class="fas fa-cloud-arrow-down"></i>
+					<span class="download-text">Download All</span>
+				</button>
+			</div>
+		</div>
+	</main>
+
+	<!-- Toast Notifications -->
+	<div class="toast-container"></div>
+
+	<!-- JSZip Library -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+	<!-- Firebase SDK -->
+	<script defer src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+	<script defer src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth-compat.js"></script>
+	<script defer src="https://www.gstatic.com/firebasejs/9.6.0/firebase-analytics-compat.js"></script>
+	<script defer src="https://www.gstatic.com/firebasejs/9.6.0/firebase-storage-compat.js"></script>
+
+	<!-- Compression Library -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/browser-image-compression/2.0.0/browser-image-compression.min.js"></script>
+
+	<!-- Initialize Firebase -->
+	<script defer src="../../js/firebase-config.js"></script>
+	<script defer src="../../js/main.js"></script>
+	<script defer src="js/compressor.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "build": "webpack --config webpack.config.js",
+    "postbuild": "uglifyjs dist/bundle.js -o dist/bundle.min.js -c -m"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "helmet": "^4.6.0",
+    "firebase-admin": "^9.11.1"
+  },
+  "devDependencies": {
+    "webpack": "^5.52.0",
+    "uglify-js": "^3.14.2"
+  }
+} 

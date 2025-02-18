@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Editor - Tools Media</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../css/tools.css">
+    <link rel="stylesheet" href="css/editor.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="mobile-backdrop"></div>
+    <!-- Same navbar as tools.html -->
+    <nav class="navbar sticky">
+        <!-- ...existing code... -->
+    </nav>
+
+    <main class="tool-page">
+        <div class="tool-header">
+            <h1>Image Editor</h1>
+            <p>Edit and enhance your images with powerful tools</p>
+        </div>
+
+        <div class="tool-container">
+            <div class="editor-layout">
+                <div class="editor-sidebar">
+                    <div class="tool-group">
+                        <h3>Basic Tools</h3>
+                        <button class="tool-btn" data-tool="crop">
+                            <i class="fas fa-crop"></i>
+                            <span>Crop</span>
+                        </button>
+                        <button class="tool-btn" data-tool="rotate">
+                            <i class="fas fa-redo"></i>
+                            <span>Rotate</span>
+                        </button>
+                        <button class="tool-btn" data-tool="resize">
+                            <i class="fas fa-expand"></i>
+                            <span>Resize</span>
+                        </button>
+                    </div>
+                    <div class="tool-group">
+                        <h3>Adjustments</h3>
+                        <div class="adjustment-control">
+                            <label>Brightness</label>
+                            <input type="range" min="-100" max="100" value="0" data-adjust="brightness">
+                        </div>
+                        <div class="adjustment-control">
+                            <label>Contrast</label>
+                            <input type="range" min="-100" max="100" value="0" data-adjust="contrast">
+                        </div>
+                        <div class="adjustment-control">
+                            <label>Saturation</label>
+                            <input type="range" min="-100" max="100" value="0" data-adjust="saturation">
+                        </div>
+                    </div>
+                    <div class="tool-group">
+                        <h3>Filters</h3>
+                        <div class="filters-grid">
+                            <button class="filter-btn" data-filter="none">Normal</button>
+                            <button class="filter-btn" data-filter="grayscale">B&W</button>
+                            <button class="filter-btn" data-filter="sepia">Sepia</button>
+                            <button class="filter-btn" data-filter="vintage">Vintage</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="editor-main">
+                    <div class="canvas-container">
+                        <canvas id="imageCanvas"></canvas>
+                    </div>
+                    <div class="upload-prompt" id="uploadPrompt">
+                        <i class="fas fa-image"></i>
+                        <h3>Upload an image to start editing</h3>
+                        <button class="upload-btn">
+                            <i class="fas fa-upload"></i>
+                            Choose Image
+                        </button>
+                        <input type="file" id="fileInput" accept="image/*" hidden>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button id="undoBtn" class="secondary-btn" disabled>
+                    <i class="fas fa-undo"></i>
+                    Undo
+                </button>
+                <button id="resetBtn" class="secondary-btn" disabled>
+                    <i class="fas fa-sync"></i>
+                    Reset
+                </button>
+                <button id="downloadBtn" class="primary-btn" disabled>
+                    <i class="fas fa-download"></i>
+                    Save Image
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container"></div>
+
+    <!-- Firebase SDK -->
+    <script defer src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth-compat.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/9.6.0/firebase-analytics-compat.js"></script>
+
+    <!-- Initialize Firebase -->
+    <script defer src="../../js/firebase-config.js"></script>
+    <script defer src="../../js/main.js"></script>
+    <script defer src="js/editor.js"></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Grammar Checker - Tools Media</title>
+	<link rel="stylesheet" href="../../styles.css">
+	<link rel="stylesheet" href="../../css/tools.css">
+	<link rel="stylesheet" href="css/grammar-checker.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+	<div class="mobile-backdrop"></div>
+	<nav class="navbar sticky">
+		<div class="logo">
+			<a href="../../index.html" class="logo-link">
+				<h1>Tools Media</h1>
+			</a>
+		</div>
+		<div class="menu-toggle">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+		<div class="nav-links">
+			<a href="../../index.html">Home</a>
+			<a href="../../tools.html" class="active">Tools</a>
+			<a href="../../tools.html#categories">Categories</a>
+			<a href="auth.html" class="auth-link show" id="navSignIn">Sign In</a>
+			<div class="profile-section">
+				<div class="profile-icon"></div>
+				<span class="profile-name"></span>
+				<div class="profile-dropdown">
+					<a href="../../profile.html">
+						<i class="fas fa-user-circle"></i>
+						<span>My Profile</span>
+					</a>
+					<a href="../../settings.html">
+						<i class="fas fa-cog"></i>
+						<span>Settings</span>
+					</a>
+					<a href="#" class="logout">
+						<i class="fas fa-sign-out-alt"></i>
+						<span>Sign Out</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</nav>
+
+	<main class="tool-page">
+		<div class="tool-header">
+			<h1>Grammar Checker</h1>
+			<p>Check and improve your writing with advanced grammar and spell checking</p>
+		</div>
+
+		<div class="tool-container">
+			<div class="generator-content">
+				<div class="input-section">
+					<div class="editor-header">
+						<h3>Text Editor</h3>
+						<div class="editor-controls">
+							<button id="clearText" class="secondary-btn">Clear</button>
+							<button id="checkGrammar" class="primary-btn">Check Grammar</button>
+						</div>
+
+					</div>
+					<div class="editor-container">
+						<textarea id="textInput" placeholder="Enter or paste your text here..."></textarea>
+					</div>
+					<div class="word-count">
+						<span class="stat-item">
+							Words: <span id="wordCount">0</span>
+						</span>
+						<span class="stat-item">
+							Characters: <span id="charCount">0</span>
+						</span>
+					</div>
+
+				</div>
+
+				<div class="output-section">
+					<div class="results-header">
+						<h3>Results</h3>
+						<div class="stats">
+							<span class="stat-item">
+								Errors: <span id="errorCount">0</span>
+							</span>
+							<span class="stat-item">
+								Suggestions: <span id="suggestionCount">0</span>
+							</span>
+						</div>
+
+					</div>
+					<div class="results-container" id="resultsContainer">
+						<div class="placeholder-message">
+							<p>Your grammar check results will appear here</p>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<div class="toast-container"></div>
+
+	<!-- Firebase SDK -->
+	<script defer src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+	<script defer src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth-compat.js"></script>
+	<script defer src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore-compat.js"></script>
+
+	<!-- Initialize Firebase -->
+	<script defer src="../../js/firebase-config.js"></script>
+	<script defer src="../../js/main.js"></script>
+	<script defer src="js/grammar-checker.js"></script>
+</body>
+</html>
